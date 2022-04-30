@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Admins">
+          <Key>
+            <PropertyRef Name="adminId" />
+          </Key>
+          <Property Name="adminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="adminMail" Type="varchar(max)" />
+          <Property Name="adminPassword" Type="varchar(max)" />
+          <Property Name="adminToken" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Ilan">
+          <Key>
+            <PropertyRef Name="ilanId" />
+          </Key>
+          <Property Name="ilanId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="baslik" Type="varchar(max)" />
+          <Property Name="aciklama" Type="varchar(max)" />
+          <Property Name="ilanTipi" Type="varchar" MaxLength="50" />
+          <Property Name="muhit" Type="varchar(max)" />
+          <Property Name="ozellikler" Type="varchar(max)" />
+          <Property Name="cepheler" Type="varchar" MaxLength="50" />
+          <Property Name="ilandaMiAdmin" Type="varchar" MaxLength="10" />
+          <Property Name="ilandaMiKullanici" Type="varchar" MaxLength="10" />
+          <Property Name="resimler" Type="varchar(max)" />
+          <Property Name="fiyat" Type="varchar" MaxLength="150" />
+          <Property Name="durum" Type="varchar" MaxLength="50" />
+          <Property Name="kat" Type="varchar" MaxLength="50" />
+          <Property Name="sehir" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="messageId" />
+          </Key>
+          <Property Name="messageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="gonderen" Type="varchar(max)" />
+          <Property Name="alan" Type="varchar(max)" />
+          <Property Name="mesaj" Type="varchar(max)" />
+          <Property Name="tarih" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Sifresifirla">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="mail" Type="varchar" MaxLength="100" />
+          <Property Name="yenilemeKodu" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userMail" Type="varchar(max)" Nullable="false" />
+          <Property Name="userName" Type="varchar(max)" Nullable="false" />
+          <Property Name="userPassword" Type="varchar(max)" Nullable="false" />
+          <Property Name="token" Type="varchar(max)" />
+          <Property Name="adminIslem" Type="varchar" MaxLength="80" />
+          <Property Name="adminMessge" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="Database1ModelStoreContainer">
+          <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ilan" EntityType="Self.Ilan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Message" EntityType="Self.Message" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sifresifirla" EntityType="Self.Sifresifirla" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Admins">
+          <Key>
+            <PropertyRef Name="adminId" />
+          </Key>
+          <Property Name="adminId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="adminMail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="adminPassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="adminToken" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Ilan">
+          <Key>
+            <PropertyRef Name="ilanId" />
+          </Key>
+          <Property Name="ilanId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <Property Name="baslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ilanTipi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="muhit" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ozellikler" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cepheler" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ilandaMiAdmin" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ilandaMiKullanici" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="resimler" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="fiyat" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="durum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="kat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sehir" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="messageId" />
+          </Key>
+          <Property Name="messageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="gonderen" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="alan" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mesaj" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="tarih" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Sifresifirla">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="mail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="yenilemeKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userMail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="userName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="userPassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="token" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="adminIslem" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="adminMessge" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="Database1Entities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Admins" EntityType="Self.Admins" />
+          <EntitySet Name="Ilan" EntityType="Self.Ilan" />
+          <EntitySet Name="Message" EntityType="Self.Message" />
+          <EntitySet Name="Sifresifirla" EntityType="Self.Sifresifirla" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities1">
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="Database1Model.Admins">
+              <MappingFragment StoreEntitySet="Admins">
+                <ScalarProperty Name="adminId" ColumnName="adminId" />
+                <ScalarProperty Name="adminMail" ColumnName="adminMail" />
+                <ScalarProperty Name="adminPassword" ColumnName="adminPassword" />
+                <ScalarProperty Name="adminToken" ColumnName="adminToken" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ilan">
+            <EntityTypeMapping TypeName="Database1Model.Ilan">
+              <MappingFragment StoreEntitySet="Ilan">
+                <ScalarProperty Name="sehir" ColumnName="sehir" />
+                <ScalarProperty Name="kat" ColumnName="kat" />
+                <ScalarProperty Name="durum" ColumnName="durum" />
+                <ScalarProperty Name="fiyat" ColumnName="fiyat" />
+                <ScalarProperty Name="ilanId" ColumnName="ilanId" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="baslik" ColumnName="baslik" />
+                <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+                <ScalarProperty Name="ilanTipi" ColumnName="ilanTipi" />
+                <ScalarProperty Name="muhit" ColumnName="muhit" />
+                <ScalarProperty Name="ozellikler" ColumnName="ozellikler" />
+                <ScalarProperty Name="cepheler" ColumnName="cepheler" />
+                <ScalarProperty Name="ilandaMiAdmin" ColumnName="ilandaMiAdmin" />
+                <ScalarProperty Name="ilandaMiKullanici" ColumnName="ilandaMiKullanici" />
+                <ScalarProperty Name="resimler" ColumnName="resimler" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Message">
+            <EntityTypeMapping TypeName="Database1Model.Message">
+              <MappingFragment StoreEntitySet="Message">
+                <ScalarProperty Name="messageId" ColumnName="messageId" />
+                <ScalarProperty Name="gonderen" ColumnName="gonderen" />
+                <ScalarProperty Name="alan" ColumnName="alan" />
+                <ScalarProperty Name="mesaj" ColumnName="mesaj" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sifresifirla">
+            <EntityTypeMapping TypeName="Database1Model.Sifresifirla">
+              <MappingFragment StoreEntitySet="Sifresifirla">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="yenilemeKodu" ColumnName="yenilemeKodu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="Database1Model.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="userMail" ColumnName="userMail" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="userPassword" ColumnName="userPassword" />
+                <ScalarProperty Name="token" ColumnName="token" />
+                <ScalarProperty Name="adminIslem" ColumnName="adminIslem" />
+                <ScalarProperty Name="adminMessge" ColumnName="adminMessge" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
